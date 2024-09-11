@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aclub - Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #222; /* Darker grey */
+            margin-bottom: 20px;
+        }
+        .login, .content {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        .login {
+            display: block;
+        }
+        .content {
+            display: none;
+        }
+        .login form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login input[type="text"], .login input[type="password"] {
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .login input[type="submit"] {
+            padding: 12px;
+            background-color: #007bff; /* Blue */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue */
+        }
+        .login .error {
+            color: #dc3545; /* Red */
+            margin-top: 10px;
+            text-align: center;
+        }
+        .login .contact-support {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login .contact-support:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff; /* Blue */
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .class-link {
+            cursor: pointer;
+            color: #007bff; /* Blue */
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .class-link:hover {
+            text-decoration: underline;
+        }
+        .class-content {
+            display: none;
+            margin-top: 10px;
+        }
+        .resource-link {
+            display: block;
+            color: #007bff; /* Blue */
+            text-decoration: none;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="login" class="login">
+        <h1>Aclub</h1>
+        <form onsubmit="return handleLogin()">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+            <div id="error-message" class="error"></div>
+        </form>
+        <a href="https://www.instagram.com/aclub.india?igsh=ZmN1ZWl5MHB0Zm8z" class="contact-support" target="_blank">Contact Support • Imran Shaik</a>
+    </div>
+
+    <div id="content" class="content">
+        <div class="section">
+            <h2>Program</h2>
+            <div id="class1" class="class-link" onclick="toggleClass('class1')">Class 1</div>
+            <div id="class1-content" class="class-content">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/QScM3OYNQms" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div id="class2" class="class-link" onclick="toggleClass('class2')">Class 2</div>
+            <div id="class2-content" class="class-content">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/RjUAsvuAvys" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div id="class3" class="class-link" onclick="toggleClass('class3')">Class 3</div>
+            <div id="class3-content" class="class-content">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/iVXTwfforM0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div id="class4" class="class-link" onclick="toggleClass('class4')">Class 4</div>
+            <div id="class4-content" class="class-content">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/UUC_ipME2Ik" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div id="class5" class="class-link" onclick="toggleClass('class5')">Class 5</div>
+            <div id="class5-content" class="class-content">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/615pajvTRrY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div id="class6" class="class-link" onclick="toggleClass('class6')">Class 6</div>
+            <div id="class6-content" class="class-content">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/9_PhXOXX4K0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Resources</h2>
+            <a href="https://drive.google.com/file/d/1vsIgUd3yGqrZTITpw-R8r2btNAj3vXv1/view?usp=drivesdk" class="resource-link" target="_blank">Resource 1</a>
+            <a href="https://drive.google.com/file/d/1vnoGBR0NYTwcKiQ2BteTv3BQopwAdqxu/view?usp=drivesdk" class="resource-link" target="_blank">Resource 2</a>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (username === '123' && password === '123') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                return false; // Prevent form from submitting
+            } else {
+                errorMessage.textContent = 'Username or Password is incorrect';
+                return false; // Prevent form from submitting
+            }
+        }
+
+        function toggleClass(classId) {
+            document.querySelectorAll('.class-content').forEach(section => {
+                section.style.display = section.id === classId + '-content' ? 
+                    (section.style.display === 'none' || section.style.display === '' ? 'block' : 'none') : 
+                    'none';
+            });
+        }
+    </script>
+</body>
+</html>
